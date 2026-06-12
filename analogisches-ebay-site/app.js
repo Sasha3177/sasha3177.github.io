@@ -33,7 +33,7 @@
   - Für private Tabellen brauchst du später ein kleines Backend oder Google Apps Script als Proxy.
 */
 
-const GOOGLE_SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTJM8ECsqtRuDGVP6aO0GqRFmiXWm8KeOGLzLzLgga8tgl6U--ujQdgtMSM0GT14VNeHBiWFrjjztSA/pub?output=csv'; // Später hier den Google-Sheets-CSV-Link eintragen.
+const GOOGLE_SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTJM8ECsqtRuDGVP6aO0GqRFmiXWm8KeOGLzLzLgga8tgl6U--ujQdgtMSM0GT14VNeHBiWFrjjztSA/pub?gid=0&single=true&output=csv'; // Später hier den Google-Sheets-CSV-Link eintragen.
 
 const OFFER_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLScCXSDOuNkuCPmOblJn53H68pp9r3Hfbiu7pRIdzL0jLun5Rg/viewform?usp=dialog';
 
