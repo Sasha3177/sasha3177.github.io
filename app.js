@@ -235,8 +235,6 @@ function createOfferCard(offer) {
   const categoryValue = pickValue(offer, ['kategorie', 'category', 'rubrik']);
   const locationValue = pickValue(offer, ['ort', 'location', 'stadt']);
   const contactValue = pickValue(offer, ['kontakt', 'contact', 'email', 'telefon']);
-  const nameValue = pickValue(offer, ['benutzername', 'name', 'user']);
-  const wishValue = pickValue(offer, ['wuensche', 'wunsche', 'wish']);
 
   const card = document.createElement('article');
   card.className = 'offer-card';
@@ -266,18 +264,6 @@ function createOfferCard(offer) {
     const contact = document.createElement('p');
     contact.textContent = `Kontakt: ${contactValue}`;
     card.append(contact);
-  }
-
-  if (nameValue) {
-    const name = document.createElement('p');
-    location.textContent = `Benutzername: ${nameValue}`;
-    card.append(name);
-  }
-
-  if (wishValue) {
-    const wish = document.createElement('p');
-    contact.textContent = `Tauschwünsche / Preis: ${wishValue}`;
-    card.append(wish);
   }
   
   return card;
