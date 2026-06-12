@@ -1,24 +1,5 @@
 'use strict';
 
-/*
-  analogisches eBay — Google Sheets Import
-  =======================================
-
-  Dein veröffentlichter CSV-Link steht direkt unten.
-
-  Wenn du eine andere Tabelle anschließen willst:
-  1. Google Sheets öffnen.
-  2. Datei / Freigeben → Im Web veröffentlichen.
-  3. Format CSV auswählen.
-  4. Den CSV-Link bei GOOGLE_SHEETS_CSV_URL einfügen.
-
-  Wichtig:
-  - Die Tabelle muss wirklich als CSV im Web veröffentlicht sein.
-  - Eine normale Freigabe „Jeder mit dem Link“ reicht manchmal nicht.
-  - Keine privaten Daten in eine öffentliche CSV-Tabelle schreiben.
-  - Die frühere strenge CSP wurde entfernt, weil sie Google-Weiterleitungen blockieren konnte.
-*/
-
 const GOOGLE_SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTJM8ECsqtRuDGVP6aO0GqRFmiXWm8KeOGLzLzLgga8tgl6U--ujQdgtMSM0GT14VNeHBiWFrjjztSA/pub?output=csv';
 
 const state = {
@@ -254,6 +235,8 @@ function createOfferCard(offer) {
   const categoryValue = pickValue(offer, ['kategorie', 'category', 'rubrik']);
   const locationValue = pickValue(offer, ['ort', 'location', 'stadt']);
   const contactValue = pickValue(offer, ['kontakt', 'contact', 'email', 'telefon']);
+  const nameValue = pickValue(offer, ['benutzername', 'name', 'user']);
+  const wishValue = pickValue(offer, ['wuensche', 'wunsche', 'wish']);
 
   const card = document.createElement('article');
   card.className = 'offer-card';
@@ -285,6 +268,18 @@ function createOfferCard(offer) {
     card.append(contact);
   }
 
+  if (nameValue) {
+    const name = document.createElement('p');
+    location.textContent = `Benutzername: ${nameValue}`;
+    card.append(name);
+  }
+
+  if (wishValue) {
+    const wish = document.createElement('p');
+    contact.textContent = `Tauschwünsche / Preis: ${wishValue}`;
+    card.append(wish);
+  }
+  
   return card;
 }
 
