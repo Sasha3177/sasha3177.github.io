@@ -28,7 +28,7 @@
   - Tauschwünsche / Preis
 */
 
-const GOOGLE_SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTJM8ECsqtRuDGVP6aO0GqRFmiXWm8KeOGLzLzLgga8tgl6U--ujQdgtMSM0GT14VNeHBiWFrjjztSA/pub?output=csv';
+const GOOGLE_SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTJM8ECsqtRuDGVP6aO0GqRFmiXWm8KeOGLzLzLgga8tgl6U--ujQdgtMSM0GT14VNeHBiWFrjjztSA/pub?gid=1051106721&single=true&output=csv';
 
 const state = {
   offers: [],
